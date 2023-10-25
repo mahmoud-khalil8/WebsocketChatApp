@@ -1,17 +1,15 @@
 const express = require('express');
 const path = require('path');
-const morgan = require('morgan');
 const app = express();
 const httpServer = require('http').createServer(app);
-const options = {
-  /* ... */
-};
-const io = require('socket.io')(httpServer, options);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'src/static/')));
+const server = app.listen(3000, () => {
+  console.log('listening on port 3000');
+});
+
+const io = require('socket.io')(server);
+
+app.use(express.static(path.join(__dirname, 'src/')));
 
 io.on('connection', (socket) => {
   // console.log('someone connected');
@@ -28,7 +26,6 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
-httpServer.listen(3000);
+// app.get('/', (req, res) => {
+//   res.render('main');
+// });
