@@ -12,20 +12,14 @@ const io = require('socket.io')(server);
 app.use(express.static(path.join(__dirname, 'src/')));
 
 io.on('connection', (socket) => {
-  // console.log('someone connected');
-  //the server is making an event (hello)
-
-  socket.on('newMessage', ({ message }) => {
-    socket.broadcast.emit('messageNotif', {
+  socket.on('newMessage', ({ message, name }) => {
+    io.emit('messageNotif', {
       message,
-      nickname: socket.nickname || 'anonymous',
+      nickname: name || 'anonymous',
     });
   });
+
   socket.on('setNickname', ({ nickname }) => {
     socket.nickname = nickname;
   });
 });
-
-// app.get('/', (req, res) => {
-//   res.render('main');
-// });

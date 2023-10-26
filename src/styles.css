@@ -15,18 +15,9 @@ body {
   height: 100vh;
 }
 
-.btn {
-  opacity: 0.7;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
 .chat-container {
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
+  width: 50rem;
   align-items: center;
   justify-content: center;
   margin: 20px;
@@ -76,10 +67,6 @@ body {
 .received-bubble {
   background-color: #6975a5;
 }
-.typing-feedback p {
-  font-size: 150%;
-  margin-top: 2rem;
-}
 
 .sent-bubble,
 .received-bubble {
@@ -112,4 +99,14 @@ body {
   font-weight: bold;
   color: #27374d;
   margin-left: 20px;
+}
+#btn {
+  background-color: #0f0d24;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btn:hover {
+  background-color: #3c3d45;
 }

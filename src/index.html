@@ -16,35 +16,18 @@
   <body>
     <div class="chat-container">
       <div class="head-container">
-        <input value="anonymous" id="name" />
+        <input value="anonymous" class="name" />
       </div>
-      <div class="message-container">
-        <div class="sent">
-          <p class="sent-bubble">
-            Hi, Mark! I made a new design for Messenger App.
-          </p>
-          <p class="sent-bubble">
-            Hi, Mark! I made a new design for Messenger App.
-          </p>
-        </div>
-        <div class="received">
-          <p class="received-bubble">
-            Yo! Send it to my assistant and we&apos;ll review it during the
-            year.
-          </p>
-        </div>
-      </div>
-      <div class="typing-feedback">
-        <p>Someone is typing...</p>
-      </div>
-      <div class="input-container">
+      <div class="message-container"></div>
+
+      <form class="input-container">
         <input
           class="message-input"
           type="text"
           placeholder="Enter your message"
         />
-        <button href="#" type="submit" id="btn">Send</button>
-      </div>
+        <button type="submit" id="btn">Send</button>
+      </form>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./main.js"></script>
