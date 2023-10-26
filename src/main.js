@@ -42,6 +42,7 @@ const handleMessageNotif = (data) => {
     sentBubble.textContent = message;
     sentContainer.appendChild(sentBubble);
     messageContainer.appendChild(sentContainer);
+    flag = 0;
   } else {
     const receivedContainer = document.createElement('div');
     receivedContainer.classList.add('received');
