@@ -24,3 +24,12 @@ https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/d346cde0-5ec
 
    ```bash
    git clone https://github.com/mahmoud-khalil8/WebsocketChatApp.git
+   
+   npm i
+
+
+   
+
+https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/5da3d78d-e15d-48f6-8c5a-6aea522a9fbd
+
+
