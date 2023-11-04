@@ -13,9 +13,9 @@ Socket.IO is a JavaScript library that simplifies WebSocket programming by provi
 
 - Real-time chat functionality using WebSocket and Socket.IO.
 - Instant message delivery and updates without the need for refreshing the page.
-- 
+  
 
-https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/d346cde0-5ec0-4d2e-9227-3c77669b9946
+https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/9c66f1aa-7b45-4236-8cd3-4f2d786b366a
 
 
 ## Installation
@@ -30,6 +30,5 @@ https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/d346cde0-5ec
 
    
 
-https://github.com/mahmoud-khalil8/WebsocketChatApp/assets/78821632/5da3d78d-e15d-48f6-8c5a-6aea522a9fbd
 
 
