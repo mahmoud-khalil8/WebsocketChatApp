@@ -1,6 +1,7 @@
 const socket = io('/');
 
 const messageInput = document.querySelector('.message-input');
+
 const inputContainer = document.querySelector('.input-container');
 const nameInput = document.querySelector('.name');
 
@@ -25,6 +26,20 @@ function setNickname(nickname) {
   socket.emit('setNickname', { nickname });
 }
 
+const getTimeString = () => {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  return `${hours}:${minutes}`;
+};
+
+const addTimestamp = () => {
+  const timestamp = document.createElement('span');
+  timestamp.classList.add('message-timestamp');
+  timestamp.textContent = getTimeString();
+  return timestamp;
+};
+
 const handleMessageNotif = (data) => {
   const { message, nickname } = data;
   console.log(nickname, message);
@@ -33,6 +48,9 @@ const handleMessageNotif = (data) => {
 
   const messageBubble = document.createElement('p');
   messageBubble.textContent = message;
+  messageBubble.classList.add('message-fade-in');
+
+  const timestamp = addTimestamp();
 
   if (flag === 1) {
     const sentContainer = document.createElement('div');
@@ -41,6 +59,7 @@ const handleMessageNotif = (data) => {
     sentBubble.classList.add('sent-bubble');
     sentBubble.textContent = message;
     sentContainer.appendChild(sentBubble);
+    sentContainer.appendChild(timestamp);
     messageContainer.appendChild(sentContainer);
     flag = 0;
   } else {
@@ -50,8 +69,10 @@ const handleMessageNotif = (data) => {
     receivedBubble.classList.add('received-bubble');
     receivedBubble.textContent = `${nickname}: ${message}`;
     receivedContainer.appendChild(receivedBubble);
+    receivedContainer.appendChild(timestamp);
     messageContainer.appendChild(receivedContainer);
   }
-};
 
+  messageContainer.scrollTop = messageContainer.scrollHeight;
+};
 socket.on('messageNotif', handleMessageNotif);
